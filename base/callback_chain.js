@@ -1,0 +1,22 @@
+/**
+ * Created by oneleaf on 15/9/29.
+ */
+function logCar(car, callback){
+    console.log("Saw a %s",car);
+    if (cars.length){
+        process.nextTick(function(){
+            callback();
+        })
+    }
+}
+
+function logCars(cars){
+    var car=cars.pop();
+    logCar(car, function(){
+        logCars(cars);
+    })
+}
+
+var cars=["Perrari","Porsche","Bugatti"];
+
+logCars(cars);
