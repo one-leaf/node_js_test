@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <title>AngularJS scope hierarchy</title>
+</head>
+<body>
+<div ng-controller="LevelA">
+    <h3>{{title}}</h3>
+    ValueA={{valueA}} <input type="button" ng-click="inc()" value="+">
+    <div ng-controller="LevelB">
+        <h3>{{title}}</h3>
+        ValueA = {{valueA}}<br/>
+        ValueB={{valueB}} <input type="button" ng-click="inc()" value="+">
+        <div ng-controller="LevelC">
+            <h3>{{title}}</h3>
+            ValueA = {{valueA}}<br/>
+            ValueB = {{valueB}}<br/>
+            ValueC = {{valueC}} <input type="button" ng-click="inc()" value="+">
+        </div>
+    </div>
+</div>
+<script src="js/angular.js"></script>
+<script src="js/scope_hierarchy.js"></script>
+</body>
+</html>
